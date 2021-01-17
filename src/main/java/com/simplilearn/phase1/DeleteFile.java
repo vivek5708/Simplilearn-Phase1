@@ -9,11 +9,11 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class DeleteFile {
-	public void deleteFile() {
-		Scanner scannerObj = new Scanner(System.in);
+	public void deleteFile(Scanner scanerObj) {
+		
 		System.out.println("Enter the File name to be deleted:");
-		String fileName =  scannerObj.nextLine();
-		scannerObj.close();
+		String fileName =  scanerObj.nextLine();
+		
 		String directoryPath = "D:\\Simplilearn Assessment\\"+fileName;
 		Path path = Paths.get(directoryPath);
 		try {
@@ -22,11 +22,10 @@ public class DeleteFile {
 		}
 		catch (NoSuchFileException e1) {
 			System.out.println("There is no file named "+fileName);
-			e1.printStackTrace();
+			/*e1.printStackTrace();*/
 		}
 		catch (DirectoryNotEmptyException e2) {
 			System.out.println("The Drectory is not empty!!");
-			e2.printStackTrace();
 		}
 		catch (IOException e3) {
 			e3.printStackTrace();

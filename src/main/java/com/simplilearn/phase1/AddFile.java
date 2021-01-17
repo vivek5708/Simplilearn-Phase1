@@ -6,10 +6,11 @@ import java.util.Scanner;
 
 public class AddFile {
 	
-	public void addNewFile() {
-		Scanner scanerObj1 = new Scanner(System.in);
+	public void addNewFile(Scanner scanerObj) {
+		
+		
 		System.out.println("Please enter the new file name to be added:");
-		String newFile = scanerObj1.nextLine();
+		String newFile = scanerObj.nextLine();
 		String rootDirectory = "D:\\Simplilearn Assessment\\";
 		File file = new File(rootDirectory,newFile);
 		try {
@@ -24,7 +25,7 @@ public class AddFile {
 			System.out.println("Icorrect File Path!!");
 			e.printStackTrace();
 		}
-		scanerObj1.close();
+		
 	}
 
 }
